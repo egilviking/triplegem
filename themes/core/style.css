@@ -1,0 +1,57 @@
+/**
+* Description: Core theme for TripleGem
+*/
+
+/**
+ * Structure
+ */
+html {
+  overflow-y:scroll;
+}
+
+
+
+body {
+ background-color:#eee;
+ font: 1em Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+#header,
+#main,
+#footer {
+  margin:8px auto;
+  padding:1em;
+  width:970px;
+  background-color:#fff;
+  border:1px solid #999;
+  border-radius: 10px;
+} 
+
+#header{margin-top: 30px;}
+
+#main {
+  min-height:20em;
+  overflow-x: scroll;
+}
+
+#footer {
+  font-size:0.9em;
+}
+
+#footer,
+#footer a {color:#666;}
+#footer a:hover {color:#333; text-decoration:none;}
+
+
+
+/**
+ * Links
+ */
+a,
+a:visited {
+  color:#A84C00;
+}
+
+
+
