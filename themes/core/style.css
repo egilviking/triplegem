@@ -1,57 +1,85 @@
 /**
-* Description: Core theme for TripleGem
+* Description: Core theme for Morris
 */
 
 /**
- * Structure
- */
-html {
-  overflow-y:scroll;
+* Structure
+*/
+html{}
+body{ 
+  margin: 0px auto;
+  width: 900px; 
+  background: #FFFFFF;
+  font: 1em Verdana;
 }
 
-
-
-body {
- background-color:#eee;
- font: 1em Verdana, Arial, Helvetica, sans-serif;
-}
-
+#wrap-header {}
+#wrap-main {}
+#wrap-footer {border-top:1px solid #ccc;background-color:#eee;}
 
 #header,
 #main,
-#footer {
-  margin:8px auto;
-  padding:1em;
-  width:970px;
-  background-color:#fff;
-  border:1px solid #999;
-  border-radius: 10px;
-} 
+#footer {margin:0 auto;width:970px;padding:8px;}
+#main,
+#footer {margin-bottom:16px;}
 
-#header{margin-top: 30px;}
-
-#main {
-  min-height:20em;
-  overflow-x: scroll;
-}
-
-#footer {
-  font-size:0.9em;
-}
-
-#footer,
-#footer a {color:#666;}
-#footer a:hover {color:#333; text-decoration:none;}
-
+#header,
+#main {background-color:#fff;}
+#main {min-height:300px;}
+#footer {font-size:0.80em;color:#666;background-color:#DDD;}
 
 
 /**
- * Links
- */
-a,
-a:visited {
-  color:#A84C00;
-}
+* Banner
+*/
+#banner {display:table;margin-bottom:10px;}
+
+.site-logo,
+.site-title,
+.site-slogan {display:table-cell;width:inherit;vertical-align:middle;text-align:left;}
+
+.site-logo {}
+.site-title,
+.site-slogan {font-family:Verdana; color:#333;
+  text-shadow:#ccc 2px -2px 2px;}
+.site-title {font-size:6em;font-weight:bold}
+.site-slogan {font-size:1.5em;font-style:italic;}
 
 
+/**
+* Links
+*/
+a {color:inherit;}
+a:link {}
+a:visited {}
+a:hover,
+a:focus {text-decoration:none;color:#5C0A0A;}
+a:active {}
 
+
+/**
+* Headings
+*/
+h1{border-bottom:3px double #ccc;padding-bottom:4px;}
+h2{border-bottom:1px solid #ccc;padding-bottom:4px;}
+
+
+/**
+* User feedback message wrappers.
+*/
+.error, .alert, .warning, .notice, .success, .info {
+padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.error, .alert { background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
+.notice, .warning { background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success { background: #e6efc2; color: #264409; border-color: #c6d880; }
+.info { background: #d5edf8; color: #205791; border-color: #92cae4; }
+.error a, .alert a { color: #8a1f11; }
+.notice a, .warning a { color: #514721; }
+.success a { color: #264409; }
+.info a { color: #205791; }
+
+
+/**
+* Misc
+*/

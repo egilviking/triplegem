@@ -4,7 +4,6 @@
 *
 * @package TripleGemCore
 */
-interface ISingleton
-{
-  public static function Instance();
+interface ISingleton {
+        public static function Instance();
 }

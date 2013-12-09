@@ -4,7 +4,6 @@
 *
 * @package TripleGemCore
 */
-interface IController
-{
-  public function Index();
+interface IController {
+        public function Index();
 }
