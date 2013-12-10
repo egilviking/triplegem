@@ -2,7 +2,7 @@
 /**
  * Bootstrapping, setting up and loading the core.
  *
- * @package TripleGemCore
+ * @package CTripleGem
  */
 
 /**
@@ -25,7 +25,7 @@ spl_autoload_register('autoload');
  * Set a default exception handler and enable logging in it.
  */
 function exceptionHandler($e) {
-  echo "TripleGemCore: Uncaught exception: <p>" . $e->getMessage() . "</p><pre>" . $e->getTraceAsString(), "</pre>";
+  echo "Lydia: Uncaught exception: <p>" . $e->getMessage() . "</p><pre>" . $e->getTraceAsString(), "</pre>";
 }
 set_exception_handler('exceptionHandler');
 

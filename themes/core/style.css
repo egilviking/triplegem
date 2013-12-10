@@ -1,11 +1,11 @@
 /** 
- * Description: Core theme for triplegem
+ * Description: Core theme for Lydia
  */
 
 /**
  * Structure
  */
-html{background-color:#444;}
+html{background-color:#eee;}
 body{margin:0;padding:0;color:#333;background-color:#fff;
   font: 1em Verdana, Arial, Helvetica, sans-serif;}
 
@@ -76,12 +76,15 @@ h2{border-bottom:1px solid #ccc;padding-bottom:4px;}
 /**
  * Forms
  */
-input{font:inherit;}
+input,textarea{font:inherit;}
 input[readonly]{color:#666;}
 label{font-size:smaller;}
 .validation-failed{border:2px solid red;}
 .validation-message{color:red;font-size:smaller;}
 .form-action-link{font-size:smaller;}
+
+.content-edit input[type=text]{width:30em;}
+.content-edit textarea{width:40em;height:15em;}
 
 
 /**
@@ -103,3 +106,5 @@ padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
 /**
  * Misc
  */
+.smaller-text{font-size:smaller;}
+.silent{color:#999;}

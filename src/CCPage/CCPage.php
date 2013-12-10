@@ -2,7 +2,7 @@
 /**
  * A page controller to display a page, for example an about-page, displays content labelled as "page".
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CCPage extends CObject implements IController {
 

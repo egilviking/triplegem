@@ -1,4 +1,4 @@
-TripleGemCore, a PHP-based, MVC-inspired CMF
+Lydia, a PHP-based, MVC-inspired CMF
 ====================================
 
 This project is used while teaching advanced PHP-programming with Model View Controller (MVC)
@@ -6,30 +6,50 @@ frameworks with a taste of Content Management Framework (CMF).
 
 Material in below links are mainly in swedish.
 
-* http://dbwebb.se/TripleGemCore/current (try out the code)
+* http://dbwebb.se/lydia/current (try out the code)
 * http://dbwebb.se/f/123 (forum with some tutorials on how the code was built, only in swedish)
 
 
 License
 -------
 
-TripleGemCore is licenses according to MIT-license. 
+Lydia is licenses according to MIT-license. 
 Any included external modules are subject to their own licensing.
 
 
 Use of external libraries
 -----------------------------------
 
-TripleGemCore uses external libraries for state of the art samples. Any external module can be replaced or
-removed for less features but without disturbing the TripleGemCore core functionality.
+Lydia uses external libraries for state of the art samples. Any external module can be replaced or
+removed for less features but without disturbing the Lydia core functionality.
 
-The following external modules exists.
+The following external modules are included in Lydia.
 
+### HTMLPurifier
 HTMLPurifier by Edward Z. Yang to filter & format HTML.
 Website: http://htmlpurifier.org/ 
+Version: 4.4.0 (2012-01-18)
 License: LGPL
-TripleGemCore path: `src/CHTMLPurifier`
+Lydia path: `src/CHTMLPurifier`
 Used by: `CMContent`
+
+
+### lessphp
+lessphp by leaf to compile LESS.
+Website: http://leafo.net/lessphp
+Version: 0.3.4-2 (2012-04-17)
+License: Dual license, MIT LICENSE and GPL VERSION 3
+Lydia path: `themes/grid/lessphp`
+Used by: `themes/grid/style.php`
+
+
+### The Semantic Grid System
+by Tyler Tate/TwigKit to get grid layout through LESS.
+Website: http://semantic.gs/
+Version: 1.2 (2012-01-11)
+License: Apache License
+Lydia path: `themes/grid/semantic.gs`
+Used by: `themes/grid/style.less.css`
 
 
 History
@@ -38,6 +58,33 @@ History
 Todo.
 
 * Yes, a lot of things to do.
+
+v0.2.20 (2012-04-23)
+
+* Moved static data from `themes/grid/functions.php` to `site/config.php`.
+* Added `themes/functions.php get_tools()` for a list of useful debug tools.
+
+
+v0.2.19 (2012-04-23)
+
+* Added typography matching vertical grid to `theme/grid`.
+* Added reset.css.
+
+
+v0.2.18 (2012-04-23)
+
+* Updated `CViewContainer` and related items to map views to regions in theme.
+
+
+v0.2.17 (2012-04-23)
+
+* Integrated with semantic.gs though the new theme `theme/grid`.
+* Included sematic.gs version 1.2 (2012-01-11).
+
+
+v0.2.16 (2012-04-19)
+
+* Integrated with `lessphp` version 0.3.4-2 (2012-04-17) and LESS though a new theme, `theme/grid`.
 
 
 v0.2.15 (2012-04-16)
@@ -64,7 +111,7 @@ v0.2.12 (2012-04-13)
 * Added `CCBlog` to display all content of type 'post' in a blog-like list.
 * Added `CCPage` to display content of type 'page' in a singel-page view.
 * Added formatting of DateTime since using function `formatDateTimeDiff()` and theme helper `time_diff()`.
-* TripleGemCore always set timezone to UTC. All time values stored in database is in UTC. 
+* Lydia always set timezone to UTC. All time values stored in database is in UTC. 
 
 
 v0.2.11 (2012-04-11) 
@@ -117,7 +164,7 @@ v0.2.04 (2012-03-19)
 
 v0.2.03 (2012-03-19) 
 
-* Made `CMUser` a part of `CTripleGem` and `CObject`.
+* Made `CMUser` a part of `CLydia` and `CObject`.
 * Created theme function `login_menu()`.
 * Created controller `CCUserControlPanel`.
 
@@ -150,8 +197,8 @@ feedback to users and showing debuginfo to the developer.
 v0.1.7 (2012-02-24) 
 
 * Added a container for the views `CViewContainer`.
-* Integrated `CViewContainer` in `CCGuestbook`, `CTripleGem`, `CObject`, and the theme handling.
-* This makes `$tg->data` obsolete and to be removed in coming releases.
+* Integrated `CViewContainer` in `CCGuestbook`, `CLydia`, `CObject`, and the theme handling.
+* This makes `$ly->data` obsolete and to be removed in coming releases.
 
 
 v0.1.6 (2012-02-24) 
@@ -167,7 +214,7 @@ v0.1.5 (2012-02-24)
 * Enabled debug output from the database operations using settings in config-file and theme-helper 
 `get_debug()`.
 * Created a default exception handler in `bootstrap.php`.
-* `CTripleGem` creates and owns the databaseobject as `$tg->db`.
+* `CLydia` creates and owns the databaseobject as `$ly->db`.
 * `CObject` makes the database object available for subclasses through `$this->db`.
 
 
@@ -185,13 +232,13 @@ v0.1.3 (2012-02-15)
 * The guestbook is fully working and stores entries in the session.
 * Cope with querystring sent to controller and methods.
 * Added theme helper theme_url($url) which prepends $url with the url to the theme directory.
-* Added session_start() in CTripleGem.
-* Use default timezone as defined in site/config.php, set in CTripleGem::__construct()
+* Added session_start() in CLydia.
+* Use default timezone as defined in site/config.php, set in CLydia::__construct()
 
 
 v0.1.2 (2012-02-15) 
 
-* One common baseclass for controllers and modules, CObject, holds access to CTripleGem through $this->
+* One common baseclass for controllers and modules, CObject, holds access to CLydia through $this->
 * Output from theme helper get_debug() is configurable in site/config.php.
 * Wrapper htmlent() for htmlentities() to support character encoding from site/config.php.
 * Remove all - and _ from the url before checking if method exists. Enables developer/display-object 
@@ -203,8 +250,8 @@ v0.1.0 (2012-02-14)
 
 * All requests handled by `index.php` and using mod_rewrite in `.htaccess`. 
 * A base structure with `bootstrap.php`, frontcontroller and theme engine.
-* Frontcontroller `CTripleGem::FronControllerRoute()` supporting varius url-constructs.
-* A basic theme controller, `CTripleGem::ThemeEngineRender()`, with `functions.php`, `style.css` and template files.
+* Frontcontroller `CLydia::FronControllerRoute()` supporting varius url-constructs.
+* A basic theme controller, `CLydia::ThemeEngineRender()`, with `functions.php`, `style.css` and template files.
 * Managing base_url and introducing theme helper functions.
 * 'CRequest' manages creation of internal links.
 

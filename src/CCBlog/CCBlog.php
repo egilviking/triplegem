@@ -2,7 +2,7 @@
 /**
  * A blog controller to display a blog-like list of all content labelled as "post".
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CCBlog extends CObject implements IController {
 

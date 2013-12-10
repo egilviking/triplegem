@@ -2,7 +2,7 @@
 /**
  * Database wrapper, provides a database API for the framework but hides details of implementation.
  *
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CDatabase {
 

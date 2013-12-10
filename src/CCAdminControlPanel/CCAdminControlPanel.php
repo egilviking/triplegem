@@ -2,7 +2,7 @@
 /**
  * Admin Control Panel to manage admin stuff.
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CCAdminControlPanel extends CObject implements IController {
 

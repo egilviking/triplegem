@@ -2,7 +2,7 @@
 /**
  * A form for editing the user profile.
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CFormUserProfile extends CForm {
 

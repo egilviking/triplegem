@@ -2,7 +2,7 @@
 /**
  * A form for creating a new user.
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CFormUserCreate extends CForm {
 

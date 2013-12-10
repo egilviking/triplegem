@@ -6,14 +6,14 @@
 /**
  * Add static entries for use in the template file. 
  */
-$tg->data['header'] = 'TripleGemCore';
+$tg->data['header'] = 'TripleGem';
 $tg->data['slogan'] = 'A PHP-based MVC-inspired CMF';
 $tg->data['favicon']      = theme_url('logo_80x80.png');
 $tg->data['logo']         = theme_url('logo_80x80.png');
 $tg->data['logo_width']   = 80;
 $tg->data['logo_height']  = 80;
 $tg->data['footer'] = <<<EOD
-<p>TripleGemCore &copy; by Per Sjölin (persjolin90@gmail.com)</p>
+<p>Lydia &copy; by Per Sjölin</p>
 
 <p>Tools: 
 <a href="http://validator.w3.org/check/referer">html5</a>

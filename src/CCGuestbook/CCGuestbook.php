@@ -2,7 +2,7 @@
 /**
  * A guestbook controller as an example to show off some basic controller and model-stuff.
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CCGuestbook extends CObject implements IController {
 
@@ -23,7 +23,7 @@ class CCGuestbook extends CObject implements IController {
    * Show a standard frontpage for the guestbook.
    */
   public function Index() {
-    $this->views->SetTitle('TripleGemCore Guestbook Example');
+    $this->views->SetTitle('Lydia Guestbook Example');
     $this->views->AddInclude(__DIR__ . '/index.tpl.php', array(
       'entries'=>$this->guestbookModel->ReadAll(), 
       'form_action'=>$this->request->CreateUrl('', 'handler')

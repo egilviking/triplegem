@@ -1,4 +1,4 @@
-TripleGemCore, the theme directory
+Lydia, the theme directory
 =========================
 
 Here is the themes. A theme is a collection of PHP-code, CSS and HTML that creates the resulting 

@@ -14,23 +14,11 @@ ini_set('display_errors', 1);
 /**
  * Set what to show as debug or developer information in the get_debug() theme helper.
  */
-$tg->config['debug']['TripleGemCore'] = false;
+$tg->config['debug']['lydia'] = false;
 $tg->config['debug']['session'] = false;
 $tg->config['debug']['timer'] = true;
 $tg->config['debug']['db-num-queries'] = true;
 $tg->config['debug']['db-queries'] = true;
-
-
-/**
- *	Filter options
- */
-$tg->config['filter']['use'] = true; 
-$tg->config['filters'] = array(
-	'bbcode'   => 'bbcode2html',
-	'link'     => 'make_clickable',
-	'markdown' => 'markdown',
-	'nl2br'    => 'get_nl2br', 
-); 
 
 
 /**
@@ -71,7 +59,7 @@ $tg->config['create_new_users'] = true;
  * Define session name
  */
 $tg->config['session_name'] = preg_replace('/[:\.\/-_]/', '', __DIR__);
-$tg->config['session_key']  = 'TripleGemCore';
+$tg->config['session_key']  = 'triplegem';
 
 
 /**
@@ -104,18 +92,91 @@ $tg->config['language'] = 'en';
 $tg->config['controllers'] = array(
   'index'     => array('enabled' => true,'class' => 'CCIndex'),
   'developer' => array('enabled' => true,'class' => 'CCDeveloper'),
+  'theme'     => array('enabled' => true,'class' => 'CCTheme'),
   'guestbook' => array('enabled' => true,'class' => 'CCGuestbook'),
   'content'   => array('enabled' => true,'class' => 'CCContent'),
   'blog'      => array('enabled' => true,'class' => 'CCBlog'),
   'page'      => array('enabled' => true,'class' => 'CCPage'),
   'user'      => array('enabled' => true,'class' => 'CCUser'),
   'acp'       => array('enabled' => true,'class' => 'CCAdminControlPanel'),
+  'modules'   => array('enabled' => true,'class' => 'CCModules'),
+  'my'        => array('enabled' => true,'class' => 'CCMycontroller'),
 );
 
 /**
- * Settings for the theme.
- */
-$tg->config['theme'] = array(
-  // The name of the theme in the theme directory
-  'name'    => 'core', 
+* Define a routing table for urls.
+*
+* Route custom urls to a defined controller/method/arguments
+*/
+$tg->config['routing'] = array(
+  'home' => array('enabled' => true, 'url' => 'index/index'),
 );
+
+
+/**
+* Settings for the theme. The theme may have a parent theme.
+*
+* When a parent theme is used the parent's functions.php will be included before the current
+* theme's functions.php. The parent stylesheet can be included in the current stylesheet
+* by an @import clause. See site/themes/mytheme for an example of a child/parent theme.
+* Template files can reside in the parent or current theme, the CLydia::ThemeEngineRender()
+* looks for the template-file in the current theme first, then it looks in the parent theme.
+*
+* There are two useful theme helpers defined in themes/functions.php.
+*  theme_url($url): Prepends the current theme url to $url to make an absolute url.
+*  theme_parent_url($url): Prepends the parent theme url to $url to make an absolute url.
+*
+* path: Path to current theme, relatively TRIPLEGEM_INSTALL_PATH, for example themes/grid or site/themes/mytheme.
+* parent: Path to parent theme, same structure as 'path'. Can be left out or set to null.
+* stylesheet: The stylesheet to include, always part of the current theme, use @import to include the parent stylesheet.
+* template_file: Set the default template file, defaults to default.tpl.php.
+* regions: Array with all regions that the theme supports.
+* data: Array with data that is made available to the template file as variables.
+*
+* The name of the stylesheet is also appended to the data-array, as 'stylesheet' and made
+* available to the template files.
+*/
+$tg->config['theme'] = array(
+  'path'            => 'site/themes/mytheme',
+  'parent'          => 'themes/grid',
+  'stylesheet'      => 'style.css',
+  'template_file'   => 'index.tpl.php',
+  'regions' => array('flash','featured-first','featured-middle','featured-last',
+	'primary','sidebar','triptych-first','triptych-middle','triptych-last',
+	'footer-column-one','footer-column-two','footer-column-three','footer-column-four',
+	'footer',
+  ),
+  'menu_to_region' => array('my-navbar'=>'navbar'),
+  'data' => array(
+	'header' => 'TripleGem',
+	'slogan' => 'A PHP-based MVC-inspired CMF',
+	'favicon' => 'logo_80x80.png',
+	'logo' => 'logo_80x80.png',
+	'logo_width'  => 80,
+	'logo_height' => 80,
+	'footer' => '<p>TripleGem &copy; by Per Sjölin</p>',
+  ),
+);
+
+
+/**
+* Define menus.
+*
+* Create hardcoded menus and map them to a theme region through $mo->config['theme'].
+*/
+$tg->config['menus'] = array(
+  'navbar' => array(
+    'home' => array('label'=>'Home', 'url'=>'home'),
+    'modules' => array('label'=>'Modules', 'url'=>'module'),
+    'content' => array('label'=>'Content', 'url'=>'content'),
+    'guestbook' => array('label'=>'Guestbook', 'url'=>'guestbook'),
+    'blog' => array('label'=>'Blog', 'url'=>'blog'),
+  ),
+  'my-navbar' => array(
+    'home' => array('label'=>'About Me', 'url'=>'my'),
+    'blog' => array('label'=>'My Blog', 'url'=>'my/blog'),
+    'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
+  ),
+);
+
+

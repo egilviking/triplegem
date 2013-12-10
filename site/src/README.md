@@ -1,4 +1,4 @@
-TripleGemCore, the site/src directory
+Lydia, the site/src directory
 =========================
 
 The directory `site/src` contains classes for addon controllers, models and more. The autoloader 

@@ -2,7 +2,7 @@
 /**
  * Wrapper for session, read and store values on session. Maintains flash values for one pageload.
  *
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CSession {
 

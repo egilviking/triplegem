@@ -2,7 +2,7 @@
 /**
  * A form to login the user profile.
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CFormUserLogin extends CForm {
 

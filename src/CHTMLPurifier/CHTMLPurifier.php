@@ -2,7 +2,7 @@
 /**
  * A wrapper for HTMLPurifier by Edward Z. Yang, http://htmlpurifier.org/
  * 
- * @package TripleGemCore
+ * @package LydiaCore
  */
 class CHTMLPurifier {
 

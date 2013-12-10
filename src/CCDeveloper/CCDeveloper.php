@@ -2,7 +2,7 @@
 /**
  * Controller for development and testing purpose, helpful methods for the developer.
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CCDeveloper extends CObject implements IController {
 

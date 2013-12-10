@@ -2,7 +2,7 @@
 /**
  * Standard controller layout.
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
 class CCIndex extends CObject implements IController {
 
@@ -14,12 +14,15 @@ class CCIndex extends CObject implements IController {
   }
   
 
-  /**
-   * Implementing interface IController. All controllers must have an index action.
-   */
-  public function Index() {			
-    $this->views->SetTitle('Index Controller');
-    $this->views->AddInclude(__DIR__ . '/index.tpl.php', array('menu'=>$this->Menu()));
+	/**
+	* Implementing interface IController. All controllers must have an index action.
+	*/
+  public function Index() {                        
+    $modules = new CMModules();
+    $controllers = $modules->AvailableControllers();
+    $this->views->SetTitle('Index')
+                ->AddInclude(__DIR__ . '/index.tpl.php', array(), 'primary')
+                ->AddInclude(__DIR__ . '/sidebar.tpl.php', array('controllers'=>$controllers), 'sidebar');
   }
 
 

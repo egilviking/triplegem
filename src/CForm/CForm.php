@@ -2,9 +2,9 @@
 /**
  * A utility class to easy creating and handling of forms
  * 
- * @package TripleGemCore
+ * @package CTripleGem
  */
-class CFormElement extends CObject implements ArrayAccess{
+class CFormElement implements ArrayAccess{
 
   /**
    * Properties
@@ -265,13 +265,11 @@ class CForm implements ArrayAccess {
     if(is_array($attributes)) {
       $this->form = array_merge($this->form, $attributes);
     }
-	
-    $id 	 = isset($this->form['id'])      ? " id='{$this->form['id']}'" : null;
-    $class   = isset($this->form['class'])   ? " class='{$this->form['class']}'" : null;
-    $name 	 = isset($this->form['name'])    ? " name='{$this->form['name']}'" : null;
-    $action  = isset($this->form['action'])  ? " action='{$this->form['action']}'" : null;
-	//$filters = $this->filter->getFiltersList();
-    $method  = " method='post'";
+    $id 	  = isset($this->form['id'])      ? " id='{$this->form['id']}'" : null;
+    $class 	= isset($this->form['class'])   ? " class='{$this->form['class']}'" : null;
+    $name 	= isset($this->form['name'])    ? " name='{$this->form['name']}'" : null;
+    $action = isset($this->form['action'])  ? " action='{$this->form['action']}'" : null;
+    $method = " method='post'";
 
     if(isset($attributes['start']) && $attributes['start']) {
       return "<form{$id}{$class}{$name}{$action}{$method}>";
