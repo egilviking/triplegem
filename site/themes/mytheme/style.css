@@ -1,0 +1,27 @@
+/**
+* Description: Sample theme for site which extends the TripleGem grid-theme.
+*/
+@import url(../../../themes/grid/style.css);
+
+html{background-color:#222;}
+body{background-color:#444;}
+#outer-wrap-header{background-color:#444;border-bottom:1px solid #CFC}
+#outer-wrap-footer{background-color:#222}
+p{	
+	color:#EEE;
+}
+a{	
+	color:#CFC;
+}
+h1,h2,h3,h4,h5,h6{
+	color:#EEE;
+}
+li{
+	color:#EEE;
+}
+code{
+	color:#EEE;
+}
+#site-slogan {
+	color:#FFF;
+}
