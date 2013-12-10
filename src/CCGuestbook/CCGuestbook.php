@@ -1,17 +1,17 @@
 <?php
 /**
-* A guestbook controller as an example to show off some basic controller and tgdel-stuff.
-*
-* @package TripleGemCore
-*/
+ * A guestbook controller as an example to show off some basic controller and model-stuff.
+ * 
+ * @package TripleGemCore
+ */
 class CCGuestbook extends CObject implements IController {
 
   private $guestbookModel;
   
 
   /**
-* Constructor
-*/
+   * Constructor
+   */
   public function __construct() {
     parent::__construct();
     $this->guestbookModel = new CMGuestbook();
@@ -19,21 +19,21 @@ class CCGuestbook extends CObject implements IController {
 
 
   /**
-* Implementing interface IController. All controllers must have an index action.
-* Show a standard frontpage for the guestbook.
-*/
+   * Implementing interface IController. All controllers must have an index action.
+   * Show a standard frontpage for the guestbook.
+   */
   public function Index() {
-    $this->views->SetTitle('Guestbook Example');
+    $this->views->SetTitle('TripleGemCore Guestbook Example');
     $this->views->AddInclude(__DIR__ . '/index.tpl.php', array(
-      'entries'=>$this->guestbookModel->ReadAll(),
-      'formAction'=>$this->request->CreateUrl('', 'handler')
+      'entries'=>$this->guestbookModel->ReadAll(), 
+      'form_action'=>$this->request->CreateUrl('', 'handler')
     ));
   }
   
 
   /**
-* Handle posts from the form and take appropriate action.
-*/
+   * Handle posts from the form and take appropriate action.
+   */
   public function Handler() {
     if(isset($_POST['doAdd'])) {
       $this->guestbookModel->Add(strip_tags($_POST['newEntry']));
@@ -43,11 +43,9 @@ class CCGuestbook extends CObject implements IController {
     }
     elseif(isset($_POST['doCreate'])) {
       $this->guestbookModel->Init();
-    }
+    }            
     $this->RedirectTo($this->request->CreateUrl($this->request->controller));
   }
   
 
-}
-
-
+} 
