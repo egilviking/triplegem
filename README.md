@@ -71,7 +71,7 @@ För att ändra namn på någon utav de tre länkarna, editera då texten: 'labe
 Lägg till en page
 ------------------------------
 Följ stegen här ovanför för att skapa en ny page. Kolla nu i listan All content på sidan content, `/content`.
-Ditt nyss skapade content ska ha lagts till i denna lista längst ner. Den har då fått ett nummer. Standard så skapas 8 contents som default. Så ditt nya content bör ha fått nummer 9.
+Ditt nyss skapade content ska ha lagts till i denna lista längst ner. Den har då fått ett nummer. Standard så skapas 8 contents som default. Så ditt nya content bör ha fått nummer 9 även kallat id.
 Denna siffra behövs för att kunna länka till den nya sidan/page.
 
 Det vi nu vill göra är att skapa en länk som visar sidan. 
