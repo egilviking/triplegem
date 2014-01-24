@@ -11,6 +11,7 @@ Installationsguide
 <br>
 Steg-för-steg
 -------------
+<br>
 1. Klona mitt ramverk ifrån github med gitbash, använd denna adress: <b>git clone https://github.com/egilviking/triplegem.git</b>
 <br>
 1.1 Det går även bra att ladda ner en zip fil som innehåller hela ramverket:<b>https://github.com/egilviking/triplegem/archive/master.zip</b> , packa upp ramverket till din dator på en lämplig plats.
