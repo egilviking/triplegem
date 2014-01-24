@@ -60,11 +60,11 @@ class CCContent extends CObject implements IController {
 
 
   /**
-   * Init the content database.
+   * Manage the content database.
    */
-  public function Init() {
+  public function Manage() {
     $content = new CMContent();
-    $content->Init();
+    $content->Manage('install');
     $this->RedirectToController();
   }
   

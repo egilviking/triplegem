@@ -14,7 +14,7 @@ ini_set('display_errors', 1);
 /**
  * Set what to show as debug or developer information in the get_debug() theme helper.
  */
-$tg->config['debug']['lydia'] = false;
+$tg->config['debug']['triplegem'] = false;
 $tg->config['debug']['session'] = false;
 $tg->config['debug']['timer'] = true;
 $tg->config['debug']['db-num-queries'] = true;
@@ -137,6 +137,7 @@ $tg->config['routing'] = array(
 * available to the template files.
 */
 $tg->config['theme'] = array(
+  'name'			=> 'mytheme',
   'path'            => 'site/themes/mytheme',
   'parent'          => 'themes/grid',
   'stylesheet'      => 'style.css',
@@ -167,7 +168,7 @@ $tg->config['theme'] = array(
 $tg->config['menus'] = array(
   'navbar' => array(
     'home' => array('label'=>'Home', 'url'=>'home'),
-    'modules' => array('label'=>'Modules', 'url'=>'module'),
+    'modules' => array('label'=>'Modules', 'url'=>'modules'),
     'content' => array('label'=>'Content', 'url'=>'content'),
     'guestbook' => array('label'=>'Guestbook', 'url'=>'guestbook'),
     'blog' => array('label'=>'Blog', 'url'=>'blog'),

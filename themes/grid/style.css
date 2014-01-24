@@ -43,7 +43,6 @@ h1 {
   color:#111111;
   margin-bottom:22px;
   margin-top:32px;
-  font-family:Palatino Linotype cursive;
   font-size:2.375em;
   line-height:1.1579;
   margin-bottom:21px;
@@ -53,7 +52,6 @@ h2 {
   color:#111111;
   margin-bottom:22px;
   margin-top:32px;
-  font-family:Palatino Linotype cursive;
   font-size:1.875em;
   line-height:1.4667;
 }
@@ -62,7 +60,6 @@ h3 {
   color:#111111;
   margin-bottom:22px;
   margin-top:32px;
-  font-family:Palatino Linotype cursive;
   font-size:1.375em;
   line-height:1;
 }
@@ -71,7 +68,6 @@ h4 {
   color:#111111;
   margin-bottom:22px;
   margin-top:32px;
-  font-family:Palatino Linotype cursive;
   font-size:1.25em;
   line-height:1.1;
 }
@@ -80,7 +76,6 @@ h5 {
   color:#111111;
   margin-bottom:22px;
   margin-top:32px;
-  font-family:Palatino Linotype cursive;
   font-size:1em;
   font-weight:bold;
 }
@@ -89,7 +84,6 @@ h6 {
   color:#111111;
   margin-bottom:22px;
   margin-top:32px;
-  font-family:Palatino Linotype cursive;
   font-size:1em;
   font-weight:bold;
   margin-bottom:0;
@@ -132,14 +126,15 @@ table {
 caption {
   text-align:left;
   font-style:italic;
+  color:#eee;
 }
-thead { border-bottom:2px solid #222222; }
+thead { border-bottom:2px solid #eee; }
 th {
   vertical-align:bottom;
   font-weight:bold;
   text-align:left;
 }
-th, td { padding:5px 10px 5px 5px; }
+th, td { padding:5px 10px 5px 5px; color:#eee;}
 tbody tr { border-bottom:1px solid #eeeeee; }
 tbody tr:hover { color:#000000; }
 tfoot { font-style:italic; }
@@ -212,7 +207,6 @@ body {
   display:table-cell;
   vertical-align:middle;
   text-align:center;
-  font-family:Palatino Linotype cursive;
   font-size:5em;
   padding-left:0.2em;
 }
@@ -220,7 +214,6 @@ body {
 #banner #site-slogan {
   display:table-cell;
   vertical-align:middle;
-  font-family:Palatino Linotype cursive;
   text-align:center;
   font-size:1.5em;
   padding-left:10px;
