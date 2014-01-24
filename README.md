@@ -11,31 +11,31 @@ Installationsguide
 <br>
 Steg-för-steg
 -------------
-<br>
+
 1. Klona mitt ramverk ifrån github med gitbash, använd denna adress: <b>git clone https://github.com/egilviking/triplegem.git</b>
-<br>
+
 1.1 Det går även bra att ladda ner en zip fil som innehåller hela ramverket:<b>https://github.com/egilviking/triplegem/archive/master.zip</b> , packa upp ramverket till din dator på en lämplig plats.
 
 2. Lokalisera vart ramverket ligger på din dator, detta för att du behöver ändra i <b>.htaccess</b> innan du laddar upp ramverket till din servermiljö.
-<br>
+
 2.1 Öppna upp .htaccess filen i valfri texteditor, på <b>rad 3</b> så finns följande kod:  `RewriteBase /~pesj13/phpmvc/triplegemref/`. Modifiera denna till din egen åtkomstpunkt/domän.
 
 3. Ladda nu upp ramverket med FileZilla eller annat ftp program till din server. Nu behöver du ändra <b>filrättigheter</b> för ett par kataloger. Om du vet hur man ändrar filrättigheter i GitBash så kan du göra det.
-<br>
+
 3.1 I FileZilla, lokalisera ramverket. Högerklicka på `site/` och ge kataloger och filer rättigheterna: <b>777, kryssa i att detta ska upprepas på underliggande filer och kataloger</b>.
-<br>
+
 3.2 Högerklicka på `themes/` och ge kataloger och filer rättigheterna: <b>777, kryssa i att detta ska upprepas på underliggande filer och kataloger</b>.
-<br><br>
+
 3.3 Om du ej gör themes skrivbara med 777, så kan det bli problem att visa logotyper, samt stylning.
 
 4. Surfa in på `www.dindomän.se/triplegem/`.
-<br>
+
 4.1 Om sidan ej kan hittas, dubbelkolla din htaccess fil.
-<br>
+
 4.2 Om sidan hittas så välkomnas du av startsidan. Längst ner i installationsstycket så finns länken: <b>modules/install</b>. Klicka på den.
-<br>
+
 4.3 Går även bra att skriva `www.dindomän.se/triplegem/modules/install` i webbläsaren. Du bör då se en sida som talar om att 3 moduler har blivit installerade, dessa är guestbook, content och user. 
-<br>
+
 4.4 Om detta ej funkar, vänligen kolla över filrättigheterna.
 
 Bra att veta
