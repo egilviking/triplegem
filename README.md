@@ -8,7 +8,7 @@ Installationsguide
 * PHP miljö
 * Server som stödjer SQLite
 * Filrättigheter för site/data (chmod 777)
-<br>
+
 Steg-för-steg
 -------------
 
