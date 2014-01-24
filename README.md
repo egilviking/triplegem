@@ -12,7 +12,7 @@ Installationsguide
 Steg-för-steg
 -------------
 
-1. Klona mitt ramverk ifrån github med gitbash, använd denna adress: <b>git clone https://github.com/egilviking/triplegem.git</b>
+1. Klona mitt ramverk ifrån github med gitbash, använd denna adress: <b>git clone https://github.com/egilviking/triplegem.git</b><br>
 1.1 Det går även bra att ladda ner en zip fil som innehåller hela ramverket:<b>https://github.com/egilviking/triplegem/archive/master.zip</b> , packa upp ramverket till din dator på en lämplig plats.
 
 2. Lokalisera vart ramverket ligger på din dator, detta för att du behöver ändra i <b>.htaccess</b> innan du laddar upp ramverket till din servermiljö.
