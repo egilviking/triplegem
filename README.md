@@ -43,10 +43,11 @@ Nu är grundinstallationen av ramverket klart, det går nu bra att börja använ
 Uppe i högra hörnet finns en login länk. Klicka på den och prova att logga in med `root:root` för administratör och `doe:doe` för member.
 Om inloggning lyckas så kan du ändra användarens kontouppgifter, så som lösenord, email och namn.
 
+<b>Klicka på gröna triplegem textlogon längst upp på hemsidan, detta tar dig tillbaka till funktionsgränssnittet, kom ihåg det.</b><br>Detta är ett substitut istället för att ha en home länk. 
+
 Skapa content
 -------------
 Det går att skapa en del olika content.
-Klicka på gröna triplegem textlogon längst upp på hemsidan, detta tar dig tillbaka till funktionsgränssnittet, kom ihåg det. 
 Leta efter länken content i spalten till höger. Nu laddas content sidan. Längst ner i spalten actions, så finns länken create new content. Klicka på den.
 
 Nu laddas create content formuläret. 
@@ -58,10 +59,11 @@ Nu laddas create content formuläret.
 	För att skapa en sida skriv page. 
 * Filter, här kan man ange olika filter beroende på om man har implementerat dessa i contents brödtext. 
 	Filters: htmlpurify, bbcode och plain. Om inga filter önskas, fyll i plain.
-	
-Ändra namn på statiskt content(valfritt)
+  	
+Ändra namn/sökvägar på content
 ------------------------------
 Navigera till: `site/config.php` och öppna den i en texteditor. <b>Rad 176</b> är intressant.
+
 För att ändra namn på någon utav de tre länkarna, editera då texten: 'label'=>'About Me'. I detta fall About Me, om denna ändras till About You. Så kommer detta att synas i navigationen på sidan.
 
 <pre>
@@ -71,6 +73,27 @@ För att ändra namn på någon utav de tre länkarna, editera då texten: 'labe
     'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
 </pre>
 
+Lägg till en page
+------------------------------
+Följ stegen här ovanför för att skapa en ny page. Kolla nu i listan All content på sidan content, `/content`.
+Ditt nyss skapade content ska ha lagts till i denna lista längst ner. Den har då fått ett nummer. Standard så skapas 8 contents som default. Så ditt nya content bör ha fått nummer 9.
+Denna siffra behövs för att kunna länka till den nya sidan/page.
+
+Det vi nu vill göra är att skapa en länk som visar sidan. 
+Navigera till: `site/config.php` och öppna den i en texteditor. <b>Rad 176</b> är intressant.
+
+För att ändra namn på någon utav de tre länkarna, editera då texten: 'label'=>'About Me'. I detta fall About Me, om denna ändras till About You. Så kommer detta att synas i navigationen på sidan.
+
+<pre>
+  'my-navbar'   => array(
+    'home'      => array('label'=>'About Me', 'url'=>'my'),
+    'blog'      => array('label'=>'My Blog', 'url'=>'my/blog'),
+    'guestbook' => array('label'=>'Guestbook', 'url'=>'my/guestbook'),
+		<b>'mypage' => array('label'=>'mypage', 'url'=>'page/view/9')</b>, /* DENNA RAD LÄGGS TILL FÖR ATT SKAPA EN NY LÄNK OCH SIDA */
+</pre>
+	
+Uppmärksamma hur denna länk skiljer sig mot de andra! Inget slash före page. Nummret ifrån contentslistan är viktig och får ej vara fel. Samt viktigt att type är page.<br>
+Denna nya länk kommer att länka till controllern page, anropa metoden view med parameter 9 och läsa in sidan.
 
 Editera designen
 -----------------
