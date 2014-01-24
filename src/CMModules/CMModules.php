@@ -11,7 +11,12 @@ class CMModules extends CObject {
    */
   public function __construct() { parent::__construct(); }
 
-  
+  /**
+   * Properties
+   */
+  private $TripleGemCoreModules = array('CTripleGem', 'CDatabase', 'CRequest', 'CViewContainer', 'CSession', 'CObject');
+  private $TripleGemCMFModules = array('CForm', 'CCPage', 'CCBlog', 'CMUser', 'CCUser', 'CMContent', 'CCContent', 'CFormUserLogin', 'CFormUserProfile', 'CFormUserCreate', 'CFormContent', 'CHTMLPurifier');
+	
 	/**
 	* Get info and details about a module.
 	*
@@ -30,8 +35,8 @@ class CMModules extends CObject {
 			$details['isModel']       = preg_match('/^CM[A-Z]/', $rc->name);
 			$details['hasSQL']        = $rc->implementsInterface('IHasSQL');
 			$details['isManageable']  = $rc->implementsInterface('IModule');
-			$details['isLydiaCore']   = in_array($rc->name, $this->lydiaCoreModules);
-			$details['isLydiaCMF']    = in_array($rc->name, $this->lydiaCMFModules);
+			$details['isTripleGemCore']   = in_array($rc->name, $this->TripleGemCoreModules);
+			$details['isTripleGemCMF']    = in_array($rc->name, $this->TripleGemCMFModules);
 			$details['publicMethods']     = $rc->getMethods(ReflectionMethod::IS_PUBLIC);
 			$details['protectedMethods']  = $rc->getMethods(ReflectionMethod::IS_PROTECTED);
 			$details['privateMethods']    = $rc->getMethods(ReflectionMethod::IS_PRIVATE);
